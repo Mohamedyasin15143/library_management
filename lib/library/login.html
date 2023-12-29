@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h2>Login Page</h2><br>
+    <div class="login">
+    <form id="login" method="get" action="index.html">
+        <label><b>User Name</b>
+        </label>
+        <input type="text" name="Uname" id="Uname" placeholder="Username">
+        <br><br>
+        <label><b>Password</b>
+        </label>
+        <input type="Password" name="Pass" id="Pass" placeholder="Password">
+        <br><br>
+        <input type="submit" name="log" id="log" value="Log In Here">
+        <script>
+            let form=document.querySelector('form');
+            let Uname=form.querySelector('#Uname');
+            let Pass=form.querySelector('#Pass');
+            form.addEventListener('log',(e)=>{
+                e.preventDefault();
+                if(Uname.value === 'admin' && Pass.value === 'admin'){
+                    location.replace('index.html')
+                } else {
+                    let h1 = document.createElement('h1');
+                    h1.innerText = "OOPS, Login Failed";
+                     document.body.appendChild(h1);
+                }
+            })
+        </script>
+        <br><br>
+        <input type="checkbox" id="check">
+        <span>Remember me</span>
+        <br><br>
+        Forgot <a href="#">Password</a>
+    </form>
+</div>
+</body>
+</html>
